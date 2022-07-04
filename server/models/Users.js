@@ -1,13 +1,14 @@
-const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema({
+const mongoose = require("mongoose");
+
+const UserSchema = new mongoose.Schema({
   name: {
     type: String,
-    require: true,
+    required: true,
   },
   age: {
     type: Number,
-    require: true,
+    required: true,
   },
   email: {
     type: String,
@@ -15,6 +16,5 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-// first is table name in MongoDB Compass
-const UserModel = mongoose.model("users", "userSchema")
-module.exports = UserModel
+const UserModel = mongoose.model("users", UserSchema);
+module.exports = UserModel;
